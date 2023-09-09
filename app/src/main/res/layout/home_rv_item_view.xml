@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:cardBackgroundColor="@color/white"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/productImage"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pTitle"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/productImage"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/pCategory"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/productImage"
+        app:layout_constraintTop_toBottomOf="@+id/pTitle"/>
+    <TextView
+        android:id="@+id/pDesc"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/productImage"
+        app:layout_constraintTop_toBottomOf="@+id/pCategory"/>
+
+    <TextView
+        android:id="@+id/pRatingRate"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pTitle"
+        app:layout_constraintStart_toEndOf="@+id/pTitle"
+        app:layout_constraintTop_toTopOf="@+id/pTitle" />
+    <TextView
+        android:id="@+id/pRatingCount"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pCategory"
+        app:layout_constraintStart_toEndOf="@+id/pCategory"
+        app:layout_constraintTop_toTopOf="@+id/pCategory" />
+    <TextView
+        android:id="@+id/pPrice"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pDesc"
+        app:layout_constraintStart_toEndOf="@+id/pDesc"
+        app:layout_constraintTop_toTopOf="@+id/pDesc" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

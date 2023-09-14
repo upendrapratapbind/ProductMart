@@ -12,12 +12,12 @@
     app:cardBackgroundColor="@color/white"
     >
 <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/productImage"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
@@ -33,18 +33,21 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="18sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/productImage"
         app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/pCategory"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:textStyle="bold"
-        android:textSize="15sp"
         android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/productImage"
-        app:layout_constraintTop_toBottomOf="@+id/pTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/pRatingBar" />
+
     <TextView
         android:id="@+id/pDesc"
         android:layout_width="200dp"
@@ -53,31 +56,49 @@
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/productImage"
-        app:layout_constraintTop_toBottomOf="@+id/pCategory"/>
+        app:layout_constraintTop_toBottomOf="@+id/pCategory" />
+
+    <RatingBar
+        android:id="@+id/pRatingBar"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/productImage"
+        app:layout_constraintTop_toBottomOf="@+id/pTitle" />
+
 
     <TextView
-        android:id="@+id/pRatingRate"
+        android:id="@+id/pPrice"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_horizontal"
+        android:padding="3dp"
         app:layout_constraintBottom_toBottomOf="@+id/pTitle"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pTitle"
         app:layout_constraintTop_toTopOf="@+id/pTitle" />
-    <TextView
-        android:id="@+id/pRatingCount"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/pCategory"
-        app:layout_constraintStart_toEndOf="@+id/pCategory"
-        app:layout_constraintTop_toTopOf="@+id/pCategory" />
-    <TextView
-        android:id="@+id/pPrice"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/pDesc"
-        app:layout_constraintStart_toEndOf="@+id/pDesc"
+
+    <ImageView
+        android:id="@+id/pLikeImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/likes"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pDesc" />
+
+    <TextView
+        android:id="@+id/pLikes"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Likes"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/pLikeImage"
+        app:layout_constraintStart_toStartOf="@+id/pLikeImage"
+        app:layout_constraintTop_toBottomOf="@+id/pLikeImage" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -33,24 +34,24 @@ class HomeAdapter(var context:Context): RecyclerView.Adapter<HomeAdapter.HomeVie
       lateinit var pTitle:TextView
       lateinit var pDesc:TextView
         lateinit var pCategory:TextView
-        lateinit var pRatingRate:TextView
-        lateinit var pRatingCount:TextView
+        lateinit var pRatingRate:RatingBar
         lateinit var pPrice:TextView
+        lateinit var pLike:TextView
 
         fun bindView(item:Product?){
             pImage=itemView.findViewById(R.id.productImage)
             pTitle=itemView.findViewById(R.id.pTitle)
             pDesc=itemView.findViewById(R.id.pDesc)
             pCategory=itemView.findViewById(R.id.pCategory)
-            pRatingRate=itemView.findViewById(R.id.pRatingRate)
-            pRatingCount=itemView.findViewById(R.id.pRatingCount)
+            pRatingRate=itemView.findViewById(R.id.pRatingBar)
+            pLike=itemView.findViewById(R.id.pLikes)
             pPrice=itemView.findViewById(R.id.pPrice)
             pTitle.text=item?.title
             pDesc.text=item?.description
             pCategory.text=item?.category
-            pRatingRate.text=("Rate->"+item?.rating?.rate.toString())
-            pRatingCount.text=("Rate Count->"+item?.rating?.count.toString())
+            pRatingRate.rating= item?.rating?.rate!!.toFloat()
             pPrice.text=("Rs "+item?.price.toString())
+            pLike.text= item.rating.count.toString()
             Glide.with(this.itemView).load(item?.image).override(300, 200).placeholder(R.drawable.shoplogo).error(R.drawable.shoplogo).into(pImage);
         }
     }
